@@ -28,6 +28,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'jquery': path.resolve(__dirname,'../node_modules/jquery/src/jquery')
     }
   },
   module: {
@@ -81,9 +83,10 @@ module.exports = {
     child_process: 'empty'
   },
   plugins: [
-  new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery"
-  })
-],
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ],
 }
