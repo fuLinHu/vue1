@@ -12,7 +12,7 @@
 						<ul class="nav nav-tabs" role="tablist">
 							<li role="presentation" class="active">
 								<a aria-controls="bootstrap" role="tab" data-toggle="tab" style="overflow: hidden;">
-                     <router-link to="/bootstrap" style="display:block;">Go to Bootstrap</router-link>
+                     <router-link to="/" style="display:block;">Go to Bootstrap</router-link>
 								</a>
 							</li>
 							<li role="presentation" class="active">
@@ -43,6 +43,7 @@
 export default {
   name: 'App',
   mounted:function(){
+    $("#myTabs ul li").eq(1).attr("class","");
     let height = $(window).height() - 20;
     $("#main_layout").attr("style", "width:100%;height:" + height + "px");
   },

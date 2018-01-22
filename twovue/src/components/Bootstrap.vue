@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div>
+    <div style="margin-top: 10px">
+      <button class="btn-default" @onclick="openDialog()"></button>
       <table id="table"></table>
     </div>
+    <dialogUse></dialogUse>
   </div>
 </template>
 
 <script>
-//import Message from 'static/jquery-easyui-1.5.4/jquery.easyui.min.js'
 export default {
   name: 'bootstrap',
   mounted:function(){
-    debugger
    $('#table').datagrid({
-      url:'datagrid_data.json',
+      url:'my.json',
       columns:[[
         {field:'code',title:'Code',width:100},
         {field:'name',title:'Name',width:100},
